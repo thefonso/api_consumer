@@ -1,0 +1,6 @@
+<%= form_tag user_path, :method => :put do %>
+   email : <%=text_field_tag :email, @user[:email]%><br />
+   first_name :<%=text_field_tag :first_name, @user[:first_name]%><br />
+   last_name :<%=text_field_tag :last_name, @user[:last_name]%><br/><br/>
+   <%=submit_tag "update"%>
+<%end%>

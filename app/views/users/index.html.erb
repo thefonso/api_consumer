@@ -1,0 +1,31 @@
+<%= link_to "Create New User", new_user_path %>
+<%if @users.present? %>
+  <p>Below is the list of users</p>
+  <table width="100%">
+    <tr>
+      <td>ID</td>
+      <td>first_name</td>
+      <td>last_name</td>
+      <td>email</td>
+      <td>Action</td>
+    </tr>
+    <!-- NOTE : the @users object in our index action is an array of hash, which is generated 
+    when we passed return data to the JSON.parse method. If you handled data in some other
+    way, modify the code below accordingly. Say for xml data you have to use something like
+    u.xpath("id").text instead of u[:id] -->
+    <%@users.each do |u|%>
+    <tr>
+      <td><%=u[:id]%></td>
+      <td><%=u[:first_name]%></td>
+      <td><%=u[:last_name]%></td>
+      <td><%=u[:email]%></td>
+      <td>
+        <%= link_to "Edit", edit_user_path(u[:id]) %> | 
+        <%= link_to "Delete", user_path(u[:id]), :method => :delete %>
+      </td>
+    </tr>
+   <%end%>
+  </table>
+<%else%>
+  <p>No User is Found</p>
+<%end%>
