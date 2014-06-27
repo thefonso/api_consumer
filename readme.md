@@ -1,6 +1,7 @@
-#API tutorial - build an api consumer app
+#API tutorial - build an api consumer app 
+(part 2)
 
-<font color="red">Note: I've created a sample API_provider application in this post(LINK HERE). We will use that app later in this tutorial</font>
+<font color="red">Note: I've created a sample API_provider application in [this post](https://github.com/thefonso/api_provider/blob/master/readme.md). We will use that app later in this tutorial</font>
 
 In this tutorial I'll show you how to create an API_consumer app to register, update or delete a user on the API_provider app database.
 
@@ -18,7 +19,7 @@ Now Let us make an application which will consume the API that I've developed in
 
 I am assuming that you have implemented a users controller at some point of time, where you have implemented **index , new, create, edit, update and destroy method**. Here the view, routes and everything remain the same, only the Users controller code will change, as now, it will interact, not with your local Database, but with the API_provider app Database.
 
-Let us create our Rails Apllication, which will consume the user management API
+Let us create our Rails Application, which will consume the user management API
 
 STEP 1: generate the rails app
 
@@ -211,3 +212,9 @@ Go to the index page of the application:
 
 http://localhost:3030/users # this will show you all users with an edit | delete link and also a create new user link. 
 Any remaining things are self explainatory. I hope this usefull!
+
+View tutorial readme pages / code:
+
+part 1 - [Build an API provider](https://github.com/thefonso/api_provider/)
+part 2 - [a REST client for Firefox here](https://github.com/thefonso/api_provider/blob/master/rest_firefox_client.md)
+part 3 - [How to build a REST client](https://github.com/thefonso/api_consumer/)
