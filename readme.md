@@ -33,8 +33,9 @@ run bundle install on the terminal
 
 	$ bundle install
 
-STEP 3: generate the user controller
+STEP 3: create the database and generate the user controller
 
+	$ rake db:create
 	$ rails g controller users
 
 STEP 4: add the routes for users resource in your routes
