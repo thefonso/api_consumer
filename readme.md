@@ -23,22 +23,19 @@ Let us create our Rails Application, which will consume the user management API
 
 STEP 1: generate the rails app
 
-<font color="red">$ rails _3.2.13_ new api_consumer_pg -T -d=postgresql</font>
-
+	$ rails _3.2.13_ new api_consumer_pg -T -d=postgresql
 
 STEP 2: add rest-client gems to your Gemfile
 
-<font color="blue">gem 'rest-client'</font>
+	gem 'rest-client'
 
 run bundle install on the terminal
 
-<font color="red">$ bundle install</font>
-
+	$ bundle install
 
 STEP 3: generate the user controller
 
-<font color='red'>$ rails g controller users</font>
-
+	$ rails g controller users
 
 STEP 4: add the routes for users resource in your routes
 
