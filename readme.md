@@ -23,7 +23,7 @@ Let us create our Rails Application, which will consume the user management API
 
 STEP 1: generate the rails app
 
-<font color="red">$ rails new api_consumer</font>
+<font color="red">$ rails _3.2.13_ new api_consumer_pg -T -d=postgresql</font>
 
 
 STEP 2: add rest-client gems to your Gemfile
