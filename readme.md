@@ -1,4 +1,4 @@
-#API tutorial - build an api consumer app 
+# API tutorial - build an api consumer app 
 (part 2)
 
 <font color="red">Note: I've created a sample API_provider application in [this post](https://github.com/thefonso/api_provider/blob/master/readme.md). We will use that app later in this tutorial</font>
@@ -21,12 +21,12 @@ I am assuming that you have implemented a users controller at some point of time
 
 Let us create our Rails Application, which will consume the user management API
 
-STEP 1: generate the rails app
+**STEP 1: generate the rails app**
 
 <font color="red">$ rails new api_consumer</font>
 
 
-STEP 2: add rest-client gems to your Gemfile
+**STEP 2: add rest-client gems to your Gemfile**
 
 <font color="blue">gem 'rest-client'</font>
 
@@ -35,19 +35,19 @@ run bundle install on the terminal
 <font color="red">$ bundle install</font>
 
 
-STEP 3: generate the user controller
+**STEP 3: generate the user controller**
 
 <font color='red'>$ rails g controller users</font>
 
 
-STEP 4: add the routes for users resource in your routes
+**STEP 4: add the routes for users resource in your routes**
 
 	ApiConsumer::Application.routes.draw do
 		resources :users
 	end
 
 
-STEP 5: Write the users controller code.
+**STEP 5: Write the users controller code.**
 
 Users controller will have the same actions and flow as you have seen in your users controller, except that, here you interact with the API provider database through its API call. IF you see the API provider document, you can see that it has provided you the authentication login, the url, and the expected data format.
 
@@ -130,7 +130,7 @@ So below is our **users_controller.rb** code:
 	   end
 	 end
 
-STEP 6 : Create the corresponding views for the controller action
+**STEP 6 : Create the corresponding views for the controller action**
 
 **index.html.erb**
 
@@ -190,7 +190,7 @@ User will modify, there details and submit to the update action, which in turn u
 	   <%=submit_tag "update"%>
 	<%end%>
 
-STEP 7 : see it working
+**STEP 7 : see it working**
 
 Now for the fun part. To see this in action you will need to start both the API_provider and API_consumer applications on your local machine...
 
