@@ -56,6 +56,8 @@ So below is our **users_controller.rb** code:
 
 <font color="red">NOTE : See the use of **get post put** and **delete** call of the REST client. It will decide which action of the API provider will be called for a certain URL</font>
 
+```ruby
+
 	class UsersController < ApplicationController
 	  require 'rest_client'
 
@@ -128,12 +130,14 @@ So below is our **users_controller.rb** code:
 	    redirect_to users_path
 	   end
 	 end
-
+```
 **STEP 6 : Create the corresponding views for the controller action**
 
 **index.html.erb**
 
 It will list all the user detail returned by the API, it will provide a “create new user” link to create a new user, also each record will have an Edit | Delete link. Clicking the edit link will take the user to the edit page where they will modify their detail and the Delete action will delete the user.
+
+```html
 
 	<%= link_to "Create New User", new_user_path %>
 	<%if @users.present? %>
@@ -166,28 +170,32 @@ It will list all the user detail returned by the API, it will provide a “creat
 	<%else%>
 	  <p>No User is Found</p>
 	<%end%>
-
+```
 **new.html.erb**
 
 Here, as usual, a user will fill up her details and on pressing submit the form will call the create action (via post) of the API and create the new user.
 
+```html
 	<%= form_tag users_path, :method => :post do %>
 	   email : <%=text_field_tag :email%><br />
 	   first_name :<%=text_field_tag :first_name%><br />
 	   last_name :<%=text_field_tag :last_name%><br/><br/>
 	   <%=submit_tag "save"%>
 	<%end%>
+```
 
 **edit.html.erb**
 
 User will modify, there details and submit to the update action, which in turn updates the record on the API_provider app database.
 
+```html
 	<%= form_tag user_path, :method => :put do %>
 	   email : <%=text_field_tag :email, @user[:email]%><br />
 	   first_name :<%=text_field_tag :first_name, @user[:first_name]%><br />
 	   last_name :<%=text_field_tag :last_name, @user[:last_name]%><br/><br/>
 	   <%=submit_tag "update"%>
 	<%end%>
+```
 
 **STEP 7 : see it working**
 
