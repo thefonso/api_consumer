@@ -28,12 +28,12 @@ class UsersController < ApplicationController
 	    payload = params.to_json # converting the params to json
 	    rest_resource = RestClient::Resource.new(uri, USERNAME, PASSWORD)
 	    begin
-			rest_resource.post payload , :content_type => "application/json"
-			flash[:notice] = "User Saved successfully"
-			redirect_to users_path # take back to index page, which now list the newly created user
+				rest_resource.post payload , :content_type => "application/json"
+				flash[:notice] = "User Saved successfully"
+				redirect_to users_path # take back to index page, which now list the newly created user
 	    rescue Exception => e
-			flash[:error] = "User Failed to save"
-			render :new
+				flash[:error] = "User Failed to save"
+				render :new
     	end
   	end
 
@@ -50,10 +50,10 @@ class UsersController < ApplicationController
 	    payload = params.to_json
 	    rest_resource = RestClient::Resource.new(uri, USERNAME, PASSWORD)
 	    begin
-			rest_resource.put payload , :content_type => "application/json"
-			flash[:notice] = "User Updated successfully"
+				rest_resource.put payload , :content_type => "application/json"
+				flash[:notice] = "User Updated successfully"
 	    rescue Exception => e
-			flash[:error] = "User Failed to Update"
+				flash[:error] = "User Failed to Update"
 	    end
 	    redirect_to users_path
 	end
