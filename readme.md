@@ -23,7 +23,7 @@ Let us create our Rails Application, which will consume the user management API
 
 **STEP 1: generate the rails app**
 
-<font color="red">$ rails new api_consumer</font>
+	$ rails _3.2.13_ new api_consumer_pg -T -d=postgresql
 
 
 **STEP 2: add rest-client gems to your Gemfile**
@@ -34,11 +34,10 @@ run bundle install on the terminal
 
 <font color="red">$ bundle install</font>
 
+**STEP 3: create the database and generate the user controller**
 
-**STEP 3: generate the user controller**
-
-<font color='red'>$ rails g controller users</font>
-
+	$ rake db:create
+	$ rails g controller users
 
 **STEP 4: add the routes for users resource in your routes**
 
@@ -200,7 +199,7 @@ $ cd to_api_provider_folder
 
 $ rails s # will start the API provider service at port 3000
 
-NOTE: For API consumer code to work, The API provider application must be up and running
+**NOTE: For API consumer code to work, The API provider application must be up and running**
 
 Start the API consumer application on some other port, say 3030
 
